@@ -1,0 +1,6 @@
+{
+  "name": "Materiales Auto-Reparables Cuánticos",
+  "description": "Simulador interactivo y plataforma de diseño científico de materiales inteligentes con memoria de forma cuántica y autorreparación molecular.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
