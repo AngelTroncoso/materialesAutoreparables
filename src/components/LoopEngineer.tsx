@@ -14,7 +14,8 @@ import {
   AlertCircle, 
   ShieldCheck,
   ChevronDown,
-  Info
+  Info,
+  Sparkles
 } from 'lucide-react';
 
 interface Iteration {
@@ -493,6 +494,25 @@ export default function LoopEngineer({ lang }: LoopEngineerProps) {
           <div className="lg:col-span-7 bg-white/5 border border-white/10 rounded-xl p-5 md:p-6 space-y-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl"></div>
             
+            {/* Fallback Banner */}
+            {(finalMaterial as any).isFallback && (
+              <div className="bg-purple-950/20 border border-purple-500/30 p-3.5 rounded-lg mb-4 flex items-start gap-3 text-[11px] leading-relaxed relative z-20">
+                <Sparkles className="w-4 h-4 text-[#00f2ff] shrink-0 mt-0.5 animate-pulse" />
+                <div>
+                  <span className="font-bold text-[#00f2ff] block mb-0.5 uppercase tracking-wider font-mono">
+                    {lang === 'es' ? 'Bucle Heurístico de Co-Simulación Local Activado' : lang === 'zh' ? '本地启发式协同模拟循环已激活' : 'Local Heuristic Co-Simulation Loop Active'}
+                  </span>
+                  <span className="text-white/70 font-serif">
+                    {lang === 'es' 
+                      ? 'Debido a límites de cuota temporales de Gemini, hemos canalizado la optimización de doble agente autónomo a través de aproximaciones ab initio deterministas hiperrealistas.' 
+                      : lang === 'zh' 
+                      ? '由于 Gemini API 临时配额限制，双智能体自适应优化现已无缝切换至本地确定性第一性原理（Ab Initio）高保真模拟方案。' 
+                      : 'Due to temporary Gemini API quota limits, the autonomous double-agent optimization has been seamlessly channeled through hyper-realistic deterministic ab-initio physics approximations.'}
+                  </span>
+                </div>
+              </div>
+            )}
+
             <div className="flex justify-between items-start border-b border-white/10 pb-4">
               <div>
                 <span className="text-[9px] font-mono font-bold bg-purple-950/40 text-purple-400 px-2.5 py-0.5 rounded border border-purple-500/20 uppercase tracking-widest">

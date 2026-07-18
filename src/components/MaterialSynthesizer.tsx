@@ -299,6 +299,24 @@ export default function MaterialSynthesizer({ lang }: MaterialSynthesizerProps) 
 
           {!loading && !error && result && (
             <div className="bg-[#0a0a0c] border border-white/10 rounded p-5 md:p-6 space-y-5 shadow-inner relative overflow-hidden animate-fade-in">
+              {result.isFallback && (
+                <div className="bg-purple-950/20 border border-purple-500/30 p-3.5 rounded-lg flex items-start gap-3 text-[11px] leading-relaxed">
+                  <Sparkles className="w-4 h-4 text-[#00f2ff] shrink-0 mt-0.5 animate-pulse" />
+                  <div>
+                    <span className="font-bold text-[#00f2ff] block mb-0.5 uppercase tracking-wider font-mono">
+                      {lang === 'es' ? 'Simulación Heurística Local Activada' : lang === 'zh' ? '本地启发式模拟已激活' : 'Local Heuristic Simulation Active'}
+                    </span>
+                    <span className="text-white/70 font-serif">
+                      {lang === 'es' 
+                        ? 'Se superó el límite de cuota o no se detectó la clave de la API de Gemini. Se ha activado el motor local de simulación cuántica sintonizado por DFT heurística para garantizar la disponibilidad ininterrumpida.' 
+                        : lang === 'zh' 
+                        ? '已达到配额限制或未检测到 Gemini API 密钥。已激活经由启发式 DFT 微调的本地量子物理模拟引擎，以确保系统无间断的高可用运行。' 
+                        : 'Quota limit exceeded or Gemini API key unconfigured. The local quantum physics simulation engine fine-tuned by heuristic DFT has been activated to ensure 100% uninterrupted availability.'}
+                    </span>
+                  </div>
+                </div>
+              )}
+
               {/* Technical Badge Header */}
               <div className="flex justify-between items-start gap-4 border-b border-white/10 pb-4">
                 <div>

@@ -62,4 +62,6 @@ export interface SynthesisResult {
   feasibilityRating: number; // 1-100
   quantumCoherenceEstimate: string;
   researchNextSteps: string[];
+  isFallback?: boolean;
+  fallbackReason?: string;
 }
