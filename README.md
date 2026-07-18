@@ -19,6 +19,7 @@
 - [Instalación](#-instalación)
 - [Variables de entorno](#-variables-de-entorno)
 - [Uso](#-uso)
+- [Desarrollo con Codex](#-desarrollo-con-codex)
 - [Idiomas soportados](#-idiomas-soportados)
 - [Desafíos técnicos](#-desafíos-técnicos)
 - [Roadmap](#-roadmap)
@@ -143,6 +144,19 @@ GEMINI_API_KEY=tu_clave_aqui
    - Propón una composición en el **Material Synthesizer** y revisa el dossier generado por IA.
    - Lanza un ciclo de optimización en el **Loop Engineer** y sigue la consola de logs.
 4. Cambia de idioma (ES / EN / ZH) desde el selector disponible en la interfaz.
+
+## 🤖 Desarrollo con Codex
+
+Codex puede trabajar directamente sobre el repositorio para explicar la arquitectura, localizar errores, implementar mejoras, revisar cambios y actualizar pruebas o documentación. En este proyecto se usa como **asistente de desarrollo**, mientras que Gemini continúa siendo el modelo consumido por la aplicación durante la ejecución.
+
+El archivo [`AGENTS.md`](AGENTS.md) proporciona a Codex contexto persistente sobre la arquitectura, los comandos y las restricciones del proyecto. Al abrir el repositorio con Codex, se pueden solicitar tareas concretas como:
+
+- "Revisa `server.ts` y mejora el manejo de errores sin cambiar el proveedor de IA."
+- "Añade una opción al simulador y actualiza las traducciones en los tres idiomas."
+- "Busca problemas de tipos, corrígelos y comprueba el resultado con `npm run lint`."
+- "Explica el flujo entre `MaterialSynthesizer.tsx` y `/api/simulate-material`."
+
+No es necesario añadir Codex al bundle del frontend ni entregarle una clave desde el navegador. Si en el futuro se desea incorporar una función de usuario basada en modelos de OpenAI, debe implementarse como una integración de servidor independiente y mantener las credenciales fuera del cliente.
 
 ## 🌐 Idiomas soportados
 
