@@ -1,4 +1,5 @@
 # 🧬 Materiales Auto-Reparables con Memoria de Forma Cuántica
+[Conoce la web - Pincha - Aqui!! ](https://materialesautoreparables.netlify.app/)
 
 > Plataforma de simulación y diseño científico para materiales inteligentes que se autodiagnostican y autorreparan mediante mecanismos asistidos por principios cuánticos (túnel cuántico, coherencia de espín) combinados con aleaciones y polímeros con memoria de forma (SMA/SMP).
 
